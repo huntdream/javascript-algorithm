@@ -1,24 +1,23 @@
-function SelectionSort(data){
-    for(let i=0,len = data.length;i<len;i++){
+function SelectionSort(data) {
+    let len = data.length;
+    console.time('Time');
+    for (let i = 0; i < len; i++) {
         let min = i;
-        for(let j=i+1,len = data.length;j<len;j++){
-            if(data[min]>data[j]){
+        for (let j = i + 1; j < len; j++) {
+            if (data[min] > data[j]) {
                 min = j;
             }
         }
-        if(min!==i){
-            // ES5
-            // let temp = data[min];
-            // data[min] = data[i];
-            // data[i]=temp;
-
-            // ES6, destruture
-            [data[i],data[min]] = [data[min],data[i]];
+        if (min !== i) {
+            [data[i], data[min]] = [data[min], data[i]];
         }
-        console.log(data);
     }
+    console.timeEnd('Time');
 }
 
-SelectionSort([2,7,8743,24,5,5,5]);
+let data = [];
+for(let i = 0; i<20000;i++){
+    data.push(Math.floor(Math.random()*1000));
+}
 
-export default SelectionSort;
+SelectionSort(data);
