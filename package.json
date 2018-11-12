@@ -1,0 +1,8 @@
+{
+  "name": "javascript-algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/huntdream/javascript-algorithm.git",
+  "author": "Yu Mao",
+  "license": "MIT"
+}
